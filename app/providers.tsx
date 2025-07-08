@@ -12,6 +12,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
     "/auth/register",
     "/complete-profile",
     "/auth/signup-success",
+    "/auth/reset-password",
   ];
 
   // Cek apakah path termasuk dalam noNavbarRoutes

@@ -25,9 +25,9 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${plusJakartaSans.variable} dark antialiased`}>
+      <body className={`${plusJakartaSans.variable} antialiased`}>
         <Providers>
-          <Toaster />
+          <Toaster richColors position="top-right" />
           {children}
         </Providers>
       </body>
