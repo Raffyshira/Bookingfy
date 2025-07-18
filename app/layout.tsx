@@ -6,6 +6,7 @@ import { SupabaseProvider } from "@/providers/supabase-provider";
 import { Toaster } from "@/components/ui/sonner";
 
 import { createClient } from "@/lib/supabase/server";
+import { ThemeProvider } from "@/components/dark-mode-ui/theme-provider";
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["200", "300", "400", "500", "600", "700", "800"], // gunakan variable font
@@ -24,12 +25,14 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${plusJakartaSans.variable} dark antialiased`}>
-        <Providers>
-          <Toaster richColors position="top-right" />
-          {children}
-        </Providers>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${plusJakartaSans.variable} antialiased`}>
+        <ThemeProvider defaultTheme="light">
+          <Providers>
+            <Toaster richColors position="top-right" />
+            {children}
+          </Providers>
+        </ThemeProvider>
       </body>
     </html>
   );

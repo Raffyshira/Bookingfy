@@ -1,4 +1,5 @@
 "use client";
+import { ModeToggle } from "@/components/dark-mode-ui/mode-toggle";
 import {
   Navbar,
   NavBody,
@@ -47,10 +48,13 @@ export default function NavbarDemo() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
+            <ModeToggle />
             {session ? (
-              <UserMenu
-                profileName={`${profile?.first_name} ${profile?.last_name}`}
-              />
+              <>
+                <UserMenu
+                  profileName={`${profile?.first_name} ${profile?.last_name}`}
+                />
+              </>
             ) : (
               <>
                 <NavbarButton as="a" href="/auth/login" variant="secondary">

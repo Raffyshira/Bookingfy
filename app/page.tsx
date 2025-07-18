@@ -20,11 +20,12 @@ export default function Home() {
           <HeroSection />
         </div>
       </div>
-      <LogoutButton />
-      <p>
-        {profile?.first_name}
-        {profile?.last_name}
-      </p>
+      <div className="flex justify-center items-center h-screen">
+        <p>
+          {profile?.first_name}
+          {profile?.last_name}
+        </p>
+      </div>
     </>
   );
 }
